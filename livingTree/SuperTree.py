@@ -6,6 +6,8 @@ from treelib import Tree
 
 
 class SuperTree(Tree):
+
+	# tested
 	def get_bfs_nodes(self, ):
 		"""
 		get BFS (breadth first search) node ids

@@ -3,6 +3,7 @@ from ete3 import NCBITaxa
 
 class LineageTracker(object):
 
+	# tested
 	def __init__(self, names):
 		self.names = names
 		self.ncbi = NCBITaxa()
@@ -19,7 +20,7 @@ class LineageTracker(object):
 		"""
 		lineages = self.ncbi.get_lineage(id_)
 		ranks = self.ncbi.get_rank(lineages)
-		lineages = filter(lambda x: ranks[x] in self.main_ranks, lineages)
+		lineages = list(filter(lambda x: ranks[x] in self.main_ranks, lineages))
 		return lineages
 
 	def get_multi_lineage_ids(self):
