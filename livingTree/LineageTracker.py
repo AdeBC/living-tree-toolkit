@@ -4,13 +4,14 @@ from ete3 import NCBITaxa
 class LineageTracker(object):
 
 	# tested
-	def __init__(self, names):
-		self.names = names
+	def __init__(self, ids):
+		# self.names = names
 		self.ncbi = NCBITaxa()
 		self.main_ranks = ['superkingdom', 'kingdom', 'phylum', 'class', 'order', 'family', 'genus', 'species']
-		self.taxa_ids = self.get_ids_from_names(names)  # how to get valid ids
-		self.lineage_ids = self.get_multi_lineage_ids()
-		self.lineages = map(self.get_names_from_taxids, self.lineage_ids)
+		self.taxa_ids = ids                                # how to get valid ids
+		self.lineages_ids = self.get_multi_lineage_ids()
+		self.lineages = [self.get_names_from_taxids(i) for i in self.lineages_ids]
+		self.paths_sp = self.lineages_ids_to_paths_sp(self.lineages_ids)
 
 	def get_single_lineage_ids(self, id_):
 		"""
@@ -29,17 +30,17 @@ class LineageTracker(object):
 		:param ids: species ids
 		:return: lineage ids
 		"""
-		lineage_ids = map(self.get_single_lineage_ids, self.taxa_ids)
+		lineage_ids = list(map(self.get_single_lineage_ids, self.taxa_ids))
 		return lineage_ids
 
-	def get_ranks_from_names(self, name_list):
+	def get_ranks_from_ids(self, id_list):
 		"""
 		get ranks
 		:param name_list: name list
 		:return: ranks
 		"""
-		name2rank = self.ncbi.get_rank(name_list)
-		return [name2rank for name in name_list]
+		name2rank = self.ncbi.get_rank(id_list)
+		return [name2rank[name] for name in id_list]
 
 	def get_names_from_taxids(self, id_list):
 		"""
@@ -58,6 +59,25 @@ class LineageTracker(object):
 		"""
 		ids = self.ncbi.get_name_translator(names)
 		return [ids[name][-1] for name in names]
+
+	def lineage_ids_to_path_sp(self, lineage_ids):
+		"""
+
+		:param lineage_ids:
+		:return:
+		"""
+		ranks = self.get_ranks_from_ids(lineage_ids)
+		names = self.get_names_from_taxids(lineage_ids)
+		heads = {rank: 'sk' if rank == 'superkingdom' else rank[0:1] for rank in self.main_ranks}
+		tails = {rank: names[ranks.index(rank)] if rank in ranks else '' for rank in self.main_ranks}
+		path_sp = ['{}__{}'.format(heads[rank], tails[rank]) for rank in self.main_ranks]
+		while path_sp[-1].endswith('__'):
+			path_sp.remove(path_sp[-1])
+		return path_sp
+
+	def lineages_ids_to_paths_sp(self, lineages_ids):
+		paths_sp = [self.lineage_ids_to_path_sp(ids) for ids in lineages_ids]
+		return paths_sp
 
 
 '''
