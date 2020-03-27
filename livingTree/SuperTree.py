@@ -8,6 +8,9 @@ from treelib import Tree
 class SuperTree(Tree):
 
 	# tested
+	def get_children_ids(self, nid):
+		return self.is_branch(nid)
+
 	def get_bfs_nodes(self, ):
 		"""
 		get BFS (breadth first search) node ids
@@ -69,7 +72,7 @@ class SuperTree(Tree):
 		for path in paths:
 			current_node = self.root
 			for nid in path:
-				children_ids = [n.identifier for n in self.children(current_node)]
+				children_ids = self.get_children_ids(current_node)
 				if nid not in children_ids: self.create_node(identifier=nid, parent=current_node)
 				current_node = nid
 
