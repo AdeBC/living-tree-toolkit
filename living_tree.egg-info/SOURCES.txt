@@ -1,0 +1,16 @@
+LICENSE
+MANIFEST.in
+README.md
+setup.py
+livingTree/IDConverter.py
+livingTree/LineageTracker.py
+livingTree/SuperTree.py
+livingTree/TaxaRetriever.py
+livingTree/TreeBuilder.py
+livingTree/__init__.py
+living_tree.egg-info/PKG-INFO
+living_tree.egg-info/SOURCES.txt
+living_tree.egg-info/dependency_links.txt
+living_tree.egg-info/requires.txt
+living_tree.egg-info/top_level.txt
+trees/mammalia_living_tree.pkl
