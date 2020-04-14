@@ -12,8 +12,13 @@ This project is a sub-project of the ONN4MDM project, if you use it for academic
 
 ## Update
 
-- 2020/03/27:  start finalizing project framework and release initial version.
-
+- 2020/03/27:  
+    - start finalizing project framework and release initial version.
+- 2020/04/14:  
+    - Api update `update_value` and `get_matrix`
+    - New method `get_top_down_ids`, `get_bottom_up_ids`, `get_ids_by_level` and `get_paths_to_level`
+    - Execution efficiency are improved significantly
+    
 ## Documentation
 
 For Installation, examples and API references, see [https://living-tree-toolkit.readthedocs.io/en/latest/](https://living-tree-toolkit.readthedocs.io/en/latest/)

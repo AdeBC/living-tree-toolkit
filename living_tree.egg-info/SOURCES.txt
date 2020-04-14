@@ -2,6 +2,7 @@ LICENSE
 MANIFEST.in
 README.md
 setup.py
+todo.md
 livingTree/IDConverter.py
 livingTree/LineageTracker.py
 livingTree/SuperTree.py

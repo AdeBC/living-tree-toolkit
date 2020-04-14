@@ -5,7 +5,7 @@ with open("README.md", "r") as f:
 
 setup(
 	name='living-tree',
-	version='0.0.2',
+	version='0.0.4',
 	packages=['livingTree'],
 	package_data={'example_tree': ['trees/*.pkl']},
 	include_package_data=True,
@@ -17,7 +17,7 @@ setup(
 	keywords=['taxonomic tree', 'living tree', 'data structure', 'Big data optimized'],
 	description='An efficient toolkit for constructing and processing taxonomic trees (abundance calculations, reading count statistics, etc.).',
 	long_description=long_description,
-    long_description_content_type="text/markdown",
+    	long_description_content_type="text/markdown",
 	classifiers=[
     	'Development Status :: 5 - Production/Stable',
 		'Intended Audience :: Science/Research',

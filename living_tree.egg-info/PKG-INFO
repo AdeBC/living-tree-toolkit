@@ -1,6 +1,6 @@
 Metadata-Version: 2.1
 Name: living-tree
-Version: 0.0.2
+Version: 0.0.4
 Summary: An efficient toolkit for constructing and processing taxonomic trees (abundance calculations, reading count statistics, etc.).
 Home-page: https://github.com/AdeBC/living-tree-toolkit
 Author: ch379
@@ -20,8 +20,13 @@ Description: # living-tree-toolkit
         
         ## Update
         
-        - 2020/03/27:  start finalizing project framework and release initial version.
-        
+        - 2020/03/27:  
+            - start finalizing project framework and release initial version.
+        - 2020/04/14:  
+            - Api update `update_value` and `get_matrix`
+            - New method `get_top_down_ids`, `get_bottom_up_ids`, `get_ids_by_level` and `get_paths_to_level`
+            - Execution efficiency are improved significantly
+            
         ## Documentation
         
         For Installation, examples and API references, see [https://living-tree-toolkit.readthedocs.io/en/latest/](https://living-tree-toolkit.readthedocs.io/en/latest/)
