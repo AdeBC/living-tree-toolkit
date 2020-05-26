@@ -2,7 +2,7 @@ import pickle
 import warnings
 import numpy as np
 import pandas as pd
-from copy import copy
+from copy import deepcopy
 from treelib import Tree
 from functools import reduce
 
@@ -149,12 +149,15 @@ class SuperTree(Tree):
 		matrix = self.get_matrix(dtype=dtype)
 		np.save(file, matrix)
 
-	def copy(self, ):
+	def copy(self, using_pickle=True):
 		"""
 		get a deep copy of super_tree
 		:return: new copy of super_tree
 		"""
-		return copy(self)
+		if not using_pickle:
+			return deepcopy(self)
+		else:
+			return pickle.loads(pickle.dumps(self))
 
 	# return super_tree(self.subtree(self.root), deep=True)
 
