@@ -1,6 +1,3 @@
-# from [[name, name......]] to [[name, name;name, ....]]
-
-
 class IDConverter(object):
 
 	def __init__(self, paths_sp):

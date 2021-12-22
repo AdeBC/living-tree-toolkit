@@ -2,7 +2,7 @@ import pickle
 import warnings
 import numpy as np
 import pandas as pd
-from copy import deepcopy
+from copy import deepcopy as copy
 from treelib import Tree
 from functools import reduce
 
