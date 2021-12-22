@@ -2,6 +2,7 @@
 
 An efficient toolkit for processing taxonomic trees (abundance calculations, reads count statistics, etc.)  and generating taxonomic trees using lineages data retrieved from the NCBI taxonomy database.
 
+![Status Beta](https://img.shields.io/badge/Status-Beta-yellow.svg?style=flat-square&logo=appveyor)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square&logo=appveyor)](http://makeapullrequest.com)
 [![Read the Docs (version)](https://img.shields.io/readthedocs/living-tree-toolkit/latest?label=documentation&style=flat-square)](https://living-tree-toolkit.readthedocs.io/en/latest/)
 
@@ -27,5 +28,5 @@ For Installation, examples and API references, see [https://living-tree-toolkit.
 
 | Name      | Email                   | Organization                                                 |
 | --------- | ----------------------- | ------------------------------------------------------------ |
-| Hui Chong | ch37915405887@gmail.com | Research Assistant, School of Life Science and Technology, Huazhong University of Science & Technology |
+| Hui Chong | huichong.me@gmail.com | Research Assistant, Institute of Science and Technology for Brain-inspired Intelligence, Fudan University |
 
